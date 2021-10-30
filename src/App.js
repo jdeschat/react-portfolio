@@ -6,6 +6,7 @@ import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Layout from './layouts/Layout';
 
 
 function App() {
@@ -17,9 +18,6 @@ function App() {
 
   function renderPage() {
     switch (page) {
-      case 0:
-        return <Header />
-        break;
       case 1:
         return <About />
         break;
@@ -40,11 +38,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header updateState={updateState} />
+      <Layout updateState={updateState}>
       <main>
         {renderPage()}
       </main>
-      <Footer />
+      </Layout>
     </div >
   );
 }
